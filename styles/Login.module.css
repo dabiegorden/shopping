@@ -1,0 +1,40 @@
+/* Login styling */
+.Login {
+  border: 1px solid #ccc;
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
+  background-color: #ffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.Profile {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.Info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileImage {
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.LogOut {
+  border: 1px solid #ccc;
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+  background-color: #ffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.Nav {
+  display: flex;
+  gap: 1rem;
+}
