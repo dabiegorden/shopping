@@ -1,4 +1,3 @@
-import React from 'react';
 import Head from 'next/head';
 
 import Navbar from './Navbar';
@@ -8,7 +7,7 @@ const Layout = ({ children }) => {
   return (
     <div className="layout">
       <Head>
-        <title>Shop new</title>
+        <title>Studi</title>
       </Head>
       <header>
         <Navbar />
@@ -23,4 +22,4 @@ const Layout = ({ children }) => {
   )
 }
 
-export default Layout
+export default Layout;

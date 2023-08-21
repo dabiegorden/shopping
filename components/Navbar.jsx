@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import { AiOutlineShopping } from 'react-icons/ai';
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -19,7 +18,7 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <p className="logo">
-        <Link href="/">ShoppyNew</Link>
+        <Link href="/">Studi</Link>
       </p>
 
       <div className={styles.Nav}>
