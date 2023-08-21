@@ -8,7 +8,7 @@ const Product = ({ product: { image, name, slug, price } }) => {
     <div>
       <Link href={`/product/${slug.current}`}>
         <div className="product-card">
-          <img 
+          <img
             src={urlFor(image && image[0])}
             width={250}
             height={250}
@@ -22,4 +22,4 @@ const Product = ({ product: { image, name, slug, price } }) => {
   )
 }
 
-export default Product;
+export default Product

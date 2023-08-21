@@ -8,7 +8,7 @@ import { useStateContext } from '../../context/StateContext';
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
-  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+  const { decQty, incQty, qty, onAdd, setShowCart, slug } = useStateContext();
 
   const handleBuyNow = () => {
     onAdd(product, qty);
@@ -25,7 +25,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
-              <img 
+              <img
                 key={i}
                 src={urlFor(item)}
                 className={i === index ? 'small-image selected-image' : 'small-image'}
@@ -68,14 +68,14 @@ const ProductDetails = ({ product, products }) => {
       </div>
 
       <div className="maylike-products-wrapper">
-          <h2>You may also like</h2>
-          <div className="marquee">
-            <div className="maylike-products-container track">
-              {products.map((item) => (
-                <Product key={item._id} product={item} />
-              ))}
-            </div>
+        <h2>You may also like</h2>
+        <div className="marquee">
+          <div className="maylike-products-container track">
+            {products.map((item) => (
+              <Product key={item._id} product={item} />
+            ))}
           </div>
+        </div>
       </div>
     </div>
   )
@@ -92,7 +92,7 @@ export const getStaticPaths = async () => {
   const products = await client.fetch(query);
 
   const paths = products.map((product) => ({
-    params: { 
+    params: {
       slug: product.slug.current
     }
   }));
@@ -103,10 +103,10 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({ params: { slug }}) => {
+export const getStaticProps = async ({ params: { slug } }) => {
   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
   const productsQuery = '*[_type == "product"]'
-  
+
   const product = await client.fetch(query);
   const products = await client.fetch(productsQuery);
 
@@ -117,4 +117,4 @@ export const getStaticProps = async ({ params: { slug }}) => {
   }
 }
 
-export default ProductDetails;
+export default ProductDetails
